@@ -78,6 +78,7 @@
             this.FilesListBox.Name = "FilesListBox";
             this.FilesListBox.Size = new System.Drawing.Size(525, 225);
             this.FilesListBox.TabIndex = 3;
+            this.FilesListBox.SelectedIndexChanged += new System.EventHandler(this.FilesListBox_SelectedIndexChanged);
             // 
             // Form1
             // 
