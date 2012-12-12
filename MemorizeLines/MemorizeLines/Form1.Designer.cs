@@ -51,13 +51,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProjectFolderTextBox.Location = new System.Drawing.Point(95, 15);
             this.ProjectFolderTextBox.Name = "ProjectFolderTextBox";
-            this.ProjectFolderTextBox.Size = new System.Drawing.Size(366, 20);
+            this.ProjectFolderTextBox.Size = new System.Drawing.Size(483, 20);
             this.ProjectFolderTextBox.TabIndex = 1;
             // 
             // SelectFolderButton
             // 
             this.SelectFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SelectFolderButton.Location = new System.Drawing.Point(467, 13);
+            this.SelectFolderButton.Location = new System.Drawing.Point(584, 13);
             this.SelectFolderButton.Name = "SelectFolderButton";
             this.SelectFolderButton.Size = new System.Drawing.Size(75, 23);
             this.SelectFolderButton.TabIndex = 2;
@@ -77,7 +77,7 @@
             this.FilesListBox.FormattingEnabled = true;
             this.FilesListBox.Location = new System.Drawing.Point(17, 80);
             this.FilesListBox.Name = "FilesListBox";
-            this.FilesListBox.Size = new System.Drawing.Size(525, 186);
+            this.FilesListBox.Size = new System.Drawing.Size(642, 277);
             this.FilesListBox.TabIndex = 3;
             this.FilesListBox.SelectedIndexChanged += new System.EventHandler(this.FilesListBox_SelectedIndexChanged);
             this.FilesListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilesListBox_KeyDown);
@@ -85,7 +85,7 @@
             // RecordNewSoundButton
             // 
             this.RecordNewSoundButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RecordNewSoundButton.Location = new System.Drawing.Point(467, 42);
+            this.RecordNewSoundButton.Location = new System.Drawing.Point(584, 42);
             this.RecordNewSoundButton.Name = "RecordNewSoundButton";
             this.RecordNewSoundButton.Size = new System.Drawing.Size(75, 23);
             this.RecordNewSoundButton.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 275);
+            this.ClientSize = new System.Drawing.Size(671, 374);
             this.Controls.Add(this.RecordNewSoundButton);
             this.Controls.Add(this.FilesListBox);
             this.Controls.Add(this.SelectFolderButton);
