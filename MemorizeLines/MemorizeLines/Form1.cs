@@ -16,6 +16,8 @@ namespace MemorizeLines
 {
     public partial class Form1 : Form
     {
+        SoundPlayer soundPlayer;
+
         public Form1()
         {
             InitializeComponent();
@@ -46,12 +48,29 @@ namespace MemorizeLines
 
         private void FilesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            PlayCurrentFile();
+        }
+
+        private void PlayCurrentFile()
+        {
             string file = (string)FilesListBox.SelectedItem;
 
             if (file != null)
             {
-                SoundPlayer soundPlayer = new SoundPlayer(file);
+                if(soundPlayer != null)
+                {
+                    soundPlayer.Stop();
+                }
+                soundPlayer = new SoundPlayer(file);
                 soundPlayer.Play();
+            }
+        }
+
+        private void StopCurrentFile()
+        {
+            if (soundPlayer != null)
+            {
+                soundPlayer.Stop();
             }
         }
 
@@ -107,9 +126,20 @@ namespace MemorizeLines
 
         private void FilesListBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (FilesListBox.SelectedItem != null && e.KeyCode == Keys.Delete)
+            if (FilesListBox.SelectedItem != null)
             {
-                File.Delete((string)FilesListBox.SelectedItem);
+                if (e.KeyCode == Keys.Delete)
+                {
+                    File.Delete((string)FilesListBox.SelectedItem);
+                }
+                else if (e.KeyCode == Keys.Space)
+                {
+                    PlayCurrentFile();
+                }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    StopCurrentFile();
+                }
             }
         }
 
