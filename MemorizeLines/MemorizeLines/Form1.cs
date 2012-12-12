@@ -18,6 +18,8 @@ namespace MemorizeLines
     {
         SoundPlayer soundPlayer;
 
+        Random random = new Random();
+
         public Form1()
         {
             InitializeComponent();
@@ -150,6 +152,11 @@ namespace MemorizeLines
                 ProjectFolderTextBox.Text = Settings.Default.LastProjectPath;
                 ReloadFiles();
             }
+        }
+
+        private void PlayRandomFile_Click(object sender, EventArgs e)
+        {
+            FilesListBox.SelectedIndex = random.Next(0, FilesListBox.Items.Count);
         }
     }
 }

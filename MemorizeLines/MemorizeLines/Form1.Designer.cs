@@ -34,6 +34,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.FilesListBox = new System.Windows.Forms.ListBox();
             this.RecordNewSoundButton = new System.Windows.Forms.Button();
+            this.PlayRandomFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +78,7 @@
             this.FilesListBox.FormattingEnabled = true;
             this.FilesListBox.Location = new System.Drawing.Point(17, 80);
             this.FilesListBox.Name = "FilesListBox";
-            this.FilesListBox.Size = new System.Drawing.Size(642, 277);
+            this.FilesListBox.Size = new System.Drawing.Size(642, 251);
             this.FilesListBox.TabIndex = 3;
             this.FilesListBox.SelectedIndexChanged += new System.EventHandler(this.FilesListBox_SelectedIndexChanged);
             this.FilesListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilesListBox_KeyDown);
@@ -93,11 +94,22 @@
             this.RecordNewSoundButton.UseVisualStyleBackColor = true;
             this.RecordNewSoundButton.Click += new System.EventHandler(this.RecordNewSoundButton_Click);
             // 
+            // PlayRandomFile
+            // 
+            this.PlayRandomFile.Location = new System.Drawing.Point(584, 339);
+            this.PlayRandomFile.Name = "PlayRandomFile";
+            this.PlayRandomFile.Size = new System.Drawing.Size(75, 23);
+            this.PlayRandomFile.TabIndex = 5;
+            this.PlayRandomFile.Text = "Random";
+            this.PlayRandomFile.UseVisualStyleBackColor = true;
+            this.PlayRandomFile.Click += new System.EventHandler(this.PlayRandomFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 374);
+            this.Controls.Add(this.PlayRandomFile);
             this.Controls.Add(this.RecordNewSoundButton);
             this.Controls.Add(this.FilesListBox);
             this.Controls.Add(this.SelectFolderButton);
@@ -119,6 +131,7 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ListBox FilesListBox;
         private System.Windows.Forms.Button RecordNewSoundButton;
+        private System.Windows.Forms.Button PlayRandomFile;
     }
 }
 
