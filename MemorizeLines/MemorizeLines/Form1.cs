@@ -16,5 +16,18 @@ namespace MemorizeLines
         {
             InitializeComponent();
         }
+
+        private void SelectFolderButton_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ProjectFolderTextBox.Text = folderBrowserDialog1.SelectedPath;
+                FilesListBox.Items.Clear();
+
+                FilesListBox.BeginUpdate();
+
+                FilesListBox.EndUpdate();
+            }
+        }
     }
 }
