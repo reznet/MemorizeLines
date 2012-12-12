@@ -84,6 +84,7 @@
             // 
             // RecordNewSoundButton
             // 
+            this.RecordNewSoundButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RecordNewSoundButton.Location = new System.Drawing.Point(467, 42);
             this.RecordNewSoundButton.Name = "RecordNewSoundButton";
             this.RecordNewSoundButton.Size = new System.Drawing.Size(75, 23);
@@ -103,7 +104,8 @@
             this.Controls.Add(this.ProjectFolderTextBox);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Memorize Lines";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

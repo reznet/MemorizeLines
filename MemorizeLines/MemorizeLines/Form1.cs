@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MemorizeLines.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,15 +26,22 @@ namespace MemorizeLines
             if (folderBrowserDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ProjectFolderTextBox.Text = folderBrowserDialog1.SelectedPath;
-                FilesListBox.Items.Clear();
-
-                FilesListBox.BeginUpdate();
-                foreach (var file in Directory.GetFiles(ProjectFolderTextBox.Text, "*.wav"))
-                {
-                    FilesListBox.Items.Add(file);
-                }
-                FilesListBox.EndUpdate();
+                Settings.Default.LastProjectPath = ProjectFolderTextBox.Text;
+                Settings.Default.Save();
+                
+                ReloadFiles();
             }
+        }
+
+        private void ReloadFiles()
+        {
+            FilesListBox.Items.Clear();
+            FilesListBox.BeginUpdate();
+            foreach (var file in Directory.GetFiles(ProjectFolderTextBox.Text, "*.wav"))
+            {
+                FilesListBox.Items.Add(file);
+            }
+            FilesListBox.EndUpdate();
         }
 
         private void FilesListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,6 +110,15 @@ namespace MemorizeLines
             if (FilesListBox.SelectedItem != null && e.KeyCode == Keys.Delete)
             {
                 File.Delete((string)FilesListBox.SelectedItem);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (Directory.Exists(Settings.Default.LastProjectPath))
+            {
+                ProjectFolderTextBox.Text = Settings.Default.LastProjectPath;
+                ReloadFiles();
             }
         }
     }
